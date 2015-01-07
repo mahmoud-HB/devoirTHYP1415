@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+.title{text-align:center;}
+.content{margin-top:5%;position:relative;left:6%;}
+.divImg{height: 285px;position:relative;float:left;margin-left: 10px;margin-right: 10px;}
+.img{cursor:pointer;width: 250px;height: 250px;border:solid 1px black;}
+.title{display:inherit;text-align:center;margin-bottom: 5px;}
+.clear{clear:both;}

@@ -13,11 +13,16 @@ class IndexController extends Zend_Controller_Action
         // action body
     }
 	
+		public function ecrireAction()
+    {
+        // action body
+	
+    }
+	
 	    public function lireAction()
     {
         // action body
-		echo 'lire';
-    }
 
+    }
 
 }
