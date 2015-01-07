@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-	  	<script src="../js/d3.js"></script>
+    <head>
+        <meta charset="utf-8" />
+        <title>Devoir THYP 14/15</title>
+		<center><h1> Hajbelgacem Mahmoud</h1></center>
+			  	<script src="../js/d3.js"></script>
   		<script src="../js/dimple.v2.1.0.min.js"></script>
 	
 		<script type="text/javascript">
@@ -105,21 +108,40 @@
 			}
 		</script>
 	</head>
-	
-	<body>	
-<?php
+    </head>
+    <body>
+		<center>
+		<h2> Etudiant THYP 14/15 </h2>
 
-//affiche les photos
-foreach ($this->data as $value) {
-	echo "<div align='center'>";
-	echo "<img src='".$value["url"]."' />";
-	echo $value["id"];
-	echo "<img src='../images/timeA.jpg' onclick='sauveEvent(".$value["id_etud"].",".$value["id"].")' />";
-	echo "<img src='../images/timeP.jpg' onclick='sauveEvent(".$value["id_etud"].",".$value["id"].")' />";
-	echo "<div id='rep_".$value["id_etud"]."' ></div>";
-	echo "</div>";
-}
 
-?>
+
+    <div class="container">
+
+      <div class="starter-template">
+        
+        <p class="lead"> 
+		<?php
+			//charge le flux rss dans un objet PHP
+			$xml = simplexml_load_file('http://picasaweb.google.com/data/feed/base/user/107401320610499259896/albumid/6065229773950541889?alt=rss&kind=photo&authkey=Gv1sRgCNak7e60l-7VlgE&hl=fr');
+			foreach ($xml->channel->item as $tof) {
+				echo "<img src='".$tof->enclosure["url"]."' />";
+				echo $tof->title;
+			}
+		?>
+        </p>
+        
+      </div>
+        <div class="orga-btn">
+            <button class="btn btn-lg btn-success" type="button" id="valider">Present</button>
+            <button class="btn btn-lg btn-danger" type="button" id="vider">Absent</button>
+        </div>
+
+
+    </div><!-- /.container -->
+    
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<center>
 	</body>
 </html>
